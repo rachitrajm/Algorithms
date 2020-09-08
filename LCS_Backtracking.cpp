@@ -27,12 +27,13 @@ void solve()
     cin>>a>>b;
     ll m=a.size(), n=b.size();
     vector<vector<ll>> c(m+1, vector<ll>(n+1));
-    for(int i=0; i<=m; ++i)
+    for(int i=0; i<=n; ++i) c[0][i]=0;
+    for(int i=1; i<=m; ++i) c[i][0]=0;
+    for(int i=1; i<=m; ++i)
     {
-        for(int j=0; j<=n; ++j)
+        for(int j=1; j<=n; ++j)
         {
-            if(i==0 or j==0) c[i][j]=0;
-            else if(a[i-1]==b[j-1]) c[i][j]=c[i-1][j-1]+1;
+            if(a[i-1]==b[j-1]) c[i][j]=c[i-1][j-1]+1;
             else c[i][j]=max(c[i-1][j],c[i][j-1]);
         }
     }
