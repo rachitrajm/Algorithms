@@ -27,12 +27,13 @@ void solve()
     for(int i=0; i<n; ++i) cin>>v[i];
     for(int i=0; i<n; ++i) cin>>w[i];
     vector<vector<ll>> dp(n+1,vector<ll>(target+1));
-    for(int i=0; i<=n; ++i)
+    for(int i=0; i<=n; ++i) dp[i][0]=0;
+    for(int i=1; i<=target; ++i) dp[0][i]=0;
+    for(int i=1; i<=n; ++i)
     {
-        for(int j=0; j<=target; ++j)
+        for(int j=1; j<=target; ++j)
         {
-            if(!i or !j) dp[i][j]=0;
-            else if(w[i-1]<=j) dp[i][j]=max(dp[i-1][j-w[i-1]]+v[i-1], dp[i-1][j]);
+            if(w[i-1]<=j) dp[i][j]=max(dp[i-1][j-w[i-1]]+v[i-1], dp[i-1][j]);
             else dp[i][j]=dp[i-1][j];
         }
     }
