@@ -1,6 +1,6 @@
 // This algorithm can also be represented as longest common subsequence of a string and its reversed.
 // i.e. LCS(str,reverse(str));
-// This gives longest palindromic subsequence of the sting.
+// This gives longest palindromic subsequence of the string.
 
 #include <bits/stdc++.h>
 #define ll long long
