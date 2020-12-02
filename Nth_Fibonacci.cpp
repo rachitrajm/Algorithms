@@ -1,4 +1,4 @@
-// Nth Fibonacci Number for large constrains like n<=10^18
+// Nth Fibonacci Number for large constraints like n<=10^18
 
 #include <bits/stdc++.h>
 #define ll long long
